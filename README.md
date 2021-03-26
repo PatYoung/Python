@@ -1,6 +1,6 @@
 # Python-file
 
-## [collect_all.py](https://github.com/PatYoung/Python-file/blob/master/collect_all.py)计算如下描述:
+## [collect_all](https://github.com/PatYoung/Python-file/tree/master/collect_all)计算如下描述:
 
 ### 描述
 
