@@ -1,6 +1,6 @@
 # Python Files
 
-vscode Markdown 实时预览tex，需按照插件[Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)。
+vscode Markdown 实时预览tex公式，需安装插件[Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)。
 
 ## [collect_all](https://github.com/PatYoung/Python/tree/master/collect_all)计算如下描述:
 
