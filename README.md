@@ -2,6 +2,8 @@
 
 vscode Markdown 实时预览tex公式，需安装插件[Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)。
 
+测试直接在vscode中push。
+
 ## [collect_all](https://github.com/PatYoung/Python/tree/master/collect_all)计算如下描述:
 
 ### 描述
