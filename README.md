@@ -1,6 +1,8 @@
-# Python-file
+# Python Files
 
-## [collect_all](https://github.com/PatYoung/Python-file/tree/master/collect_all)计算如下描述:
+vscode Markdown 实时预览tex，需按照插件[Markdown+Math](https://marketplace.visualstudio.com/items?itemName=goessner.mdmath)。
+
+## [collect_all](https://github.com/PatYoung/Python/tree/master/collect_all)计算如下描述:
 
 ### 描述
 
@@ -22,7 +24,7 @@ $$P(A_{1}A_{2}...A_{k}) = (1-\frac{k}{N-1})^{n-1}$$
 $$P(T=n) = P(最后一张在m中,且不出现在前(n-1)次)(1-P(所有A_{i}的交集))$$
 $$=\frac{m}{N}(1-\frac{1}{N})^{n-1}\times\sum_{k=1}^{N-1}(-1)^{k+1}C_{m-1}^{k}\left((1-\frac{k}{N-1})^{n-1}\right)$$
 
-### 特殊情况
+### **特殊情况**
 
 *select_number* $=$ *total_number*, 另有如下方法：
 
