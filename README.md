@@ -10,7 +10,7 @@ vscode Markdown 实时预览tex公式，需安装插件[Markdown+Math](https://m
 
 ### 思路
 
-第$n$次抽到牌需为*select_number*种中的一种，且不在前$n-1$次出现。同时前$n-1$次需抽到其他*select_number-1*种想要的牌。
+第$n$次抽到牌需为*select_number*种中的一种，且不在前$n-1$次出现。同时前$n-1$次需抽到其他*select_number*$-1$种想要的牌。
 这里令*total_number* $=N$，*select_number* $=m$。
 
 假设$A_{i}$表示前$n-1$次为未抽到其余想要的$m-1$中的第$i$种牌。那么同时前$n-1$次需抽到其他$m-1$种想要的牌的概率应为：
@@ -30,7 +30,7 @@ $$=\frac{m}{N}(1-\frac{1}{N})^{n-1}\times\sum_{k=1}^{N-1}(-1)^{k+1}C_{m-1}^{k}\l
 
 同上，令*total_number* $=$ *select_number* $=N$
 
-假设$B_{i}$表示前$n$次为未抽到想要的$m$中的第$i$种牌。
+假设$B_{i}$表示前$n$次为未抽到想要的$N$中的第$i$种牌。
 
 那么$P(T>n)$为$P(所有B_{i}的交集)$，又有，
 
@@ -44,9 +44,9 @@ $$P(T>n) = \sum_{k=1}^{N-1}(-1)^{k+1}C_N^{k}(1-\frac{k}{N})^{n}$$
 
 $$P(T=n) = P(T>n-1)-P(T>n)$$
 
-上式的值与一般情况下$N=m$时相同，即需满足，
+上式的值与一般情况下$m=N$时相同，即需满足，
 
-$$\sum_{k=1}^{N-1}(-1)^{k+1}C_N^{k}(1-\frac{k}{N})^{n-1}-\sum_{k=1}^{N-1}(-1)^{k+1}C_N^{k}(1-\frac{k}{N})^{n}=\frac{m}{N}(1-\frac{1}{N})^{n-1}\times\sum_{k=1}^{N-1}(-1)^{k+1}C_{m-1}^{k}\left((1-\frac{k}{N-1})^{n-1}\right)$$
+$$\sum_{k=1}^{N-1}(-1)^{k+1}C_N^{k}(1-\frac{k}{N})^{n-1}-\sum_{k=1}^{N-1}(-1)^{k+1}C_N^{k}(1-\frac{k}{N})^{n}=(1-\frac{1}{N})^{n-1}\times\sum_{k=1}^{N-1}(-1)^{k+1}C_{N-1}^{k}\left((1-\frac{k}{N-1})^{n-1}\right)$$
 
 化简如下，即需满足，
 
