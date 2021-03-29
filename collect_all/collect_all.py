@@ -82,7 +82,7 @@ def probability_greater(select_number,n):
 
 # print("+++++ +++++ +++++ +++++")
 
-def gengeral_probability_greater(total_number,select_number,n):
+def gengeral_probability(total_number,select_number,n):
     prob = 0.0
     a = 0.0
     b = 0.0
@@ -106,6 +106,6 @@ def gengeral_probability_greater(total_number,select_number,n):
     return(prob)
 
 for i in range(select_number,16):
-    print(i,":",rep_record.count(i)/rep,gengeral_probability_greater(total_number,select_number,i))
+    print(i,":",rep_record.count(i)/rep,gengeral_probability(total_number,select_number,i))
 
 
