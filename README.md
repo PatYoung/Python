@@ -26,7 +26,7 @@ $$P(A_{1}A_{2}...A_{k}) = (1-\frac{k}{N-1})^{n-1}$$
 $$P(T=n) = P(最后一张在m中,且不出现在前(n-1)次)(1-P(所有A_{i}的交集))$$
 $$=\frac{m}{N}(1-\frac{1}{N})^{n-1}\times\sum_{k=1}^{N-1}(-1)^{k+1}C_{m-1}^{k}\left((1-\frac{k}{N-1})^{n-1}\right)$$
 
-### **特殊情况**
+### *特殊情况*
 
 *select_number* $=$ *total_number*, 另有如下方法：
 
@@ -68,8 +68,10 @@ $$C_{N-1}^{k}(N-k-1)^{n-1} = C_{N-1}^{k+1}(k+1)(N-k-1)^{n-2}$$
 
 上式大括号内第$k$个左侧的项与第$k+1$个右侧项抵消，即只剩$k=1$的右侧项与$k=N-1$的左侧项，上述需满足式成立。该特殊情况也数值验证与[1=2.py](https://github.com/PatYoung/Python/blob/master/collect_all/1=2.py)中。
 
-## [2.5](https://github.com/PatYoung/Python-file/tree/master/2.5)描述:
+## [2.5](https://github.com/PatYoung/Python/tree/master/2.5)描述:
 有黑桃♠、红桃♥、梅花♣、方片♦四个种类的牌。随机抽一张，计算它与当前选中牌为相同花色的平均抽牌次数。
 该次数应为：
 
 $$\frac{1}{4}\times(1+2+3+4) = 2.5$$
+
+## [max](https://github.com/PatYoung/Python/tree/master/max):
