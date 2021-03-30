@@ -12,23 +12,23 @@ s = 0
 l = 0
 p = 0
 q = 0
-n = eval(input("How many lessons?"))
+n = input("How many lessons?")
 while i < n :
-    a.append(eval(input("What is the grade?")))
-    b.append(eval(input("What is the weight?")))
+    a.append(input("What is the grade?"))
+    b.append(input("What is the weight?"))
     c.append(a[i]*b[i])
-    print("")
+    print ""
     i = i + 1
 
 s = sum(c)/sum(b)
 
-print(s)
+print s
 
-m = eval(input("How many extra lessons?"))
+m = input("How many extra lessons?")
 while j < m :
-    x.append(eval(input("What is the grade?")))
-    y.append(eval(input("What is the weight?")))
-    print("")
+    x.append(input("What is the grade?"))
+    y.append(input("What is the weight?"))
+    print ""
     j = j + 1
 l = s
 while k < m :
@@ -44,5 +44,5 @@ while k < m :
         s = p
     k = k + 1
 
-print("Driect add:",l)
-print("Max:",s)
+print "Driect add:",l
+print "Max:",s
