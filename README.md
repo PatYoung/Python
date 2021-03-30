@@ -74,4 +74,10 @@ $$C_{N-1}^{k}(N-k-1)^{n-1} = C_{N-1}^{k+1}(k+1)(N-k-1)^{n-2}$$
 
 $$\frac{1}{4}\times(1+2+3+4) = 2.5$$
 
-## [max](https://github.com/PatYoung/Python/tree/master/max):
+## [max](https://github.com/PatYoung/Python/tree/master/max)描述:
+
+详见内部README。附上python2转python3的文件，使用方法如下
+```
+python 2to3.py -w max.py
+```
+-w表示转换后的写入到max.py中，并产生一个有.bak后缀的原文件。详见[这里](https://docs.python.org/zh-cn/3/library/2to3.html)。
