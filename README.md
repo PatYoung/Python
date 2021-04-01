@@ -115,6 +115,6 @@ $$point_tot=point_A+point_B$$
 
 ### 程序
 
-[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)为穷举$2^{n}$中可能的程序。也可加入如“当选修课成绩小于当前评分”这样的判断来减小计算量。
+[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)为穷举所有$2^{n}$可能的程序。也可加入如“当选修课成绩小于当前评分”这样的判断来减小计算量。
 
 [max.py](https://github.com/PatYoung/Python/blob/master/max/max.py)与[maxgui_complete.py](https://github.com/PatYoung/Python/blob/master/max/maxgui_complete.py)算法均有问题。[max_example.py](https://github.com/PatYoung/Python/blob/master/max/max_example.py)中就包含了[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)没有问题而[maxgui_complete.py](https://github.com/PatYoung/Python/blob/master/max/maxgui_complete.py)计算有问题的可能取值，但仍可将其视为一个easyGUI的练习程序。
