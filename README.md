@@ -74,10 +74,41 @@ $$C_{N-1}^{k}(N-k-1)^{n-1} = C_{N-1}^{k+1}(k+1)(N-k-1)^{n-2}$$
 
 $$\frac{1}{4}\times(1+2+3+4) = 2.5$$
 
-## [max](https://github.com/PatYoung/Python/tree/master/max)描述:
+## [max](https://github.com/PatYoung/Python/tree/master/max)计算描述如下:
 
-详见内部README。附上python2转python3的文件，使用方法如下
+包含easyGUI使用，见内部README。附上python2转python3的文件，使用方法如下
 ```
 python 2to3.py -w max.py
 ```
 -w表示转换后的写入到max.py中，并产生一个有.bak后缀的原文件。详见[这里](https://docs.python.org/zh-cn/3/library/2to3.html)。
+
+### 描述
+课程分为必修课与选修课。一门课程可由$(x,y)$表示。现有如下评分计算规则，将课程分为两部分A和B，必修课必须在A部分计算，而选修课可在A部分或B部分二选一计算。
+
+另一组课程的成绩为$X=(x_1,x_2,\dots,x_n)$，其对应绩点为$Y=(y_1,y_2,\dots,y_n)$。那么
+
+A部分评分有如下计算公式，
+
+$$point_A=\frac{\sum_{i}^{n}x_i y_i}{\sum_{i}^{n}y_i}, \quad (X,Y) \quad in \quad \text{A} $$
+
+即为A部分课程的加权平均。
+
+B部分评分有如下计算公式，
+
+$$point_B=0.002\sum_{i}^{n}x_i y_i, \quad (X,Y) \quad in \quad \text{B} $$
+
+且，
+
+$$point_tot=point_A+point_B$$
+
+求，应将哪几门选修课加入A部分，从而使总评分最高，该最高分是多少。
+
+### 思路
+
+若选修课有$m$门，那么将这$m$选修课加入A部分共$2^{n}$种可能，穷举计算这$2^{n}$种可能的分数，比较给出最佳方案。
+
+其中需要面对的是如何穷举，一种思路如下:
+
+可以给出这$m$门选修课的所有排列组合，按元素个数分类。第一层循环为选出的元素个数$k$，第二层循环为包含该元素个数可能排列的个数$C_{m}^{k}$。第二层循环中即可计算选出的这$k$个放入A部分的总评分。这样也就包含了所有$2^{n}$中可能。
+
+[1.py](https://github.com/PatYoung/Python/blob/master/max/1.py)给出了一个生成某一列表所有元素所有排列，且不考虑顺序的程序，即共$2^{n}$中，且包含原列表元素个数为$k$个的种类有$C_{m}^{k}$个。
