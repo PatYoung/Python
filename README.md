@@ -99,7 +99,7 @@ $$point_B=0.002\sum_{i}^{n}x_i y_i, \quad (X,Y) \quad in \quad \text{B} $$
 
 且，
 
-$$point_tot=point_A+point_B$$
+$$point_{tot}=point_A+point_B$$
 
 求，应将哪几门选修课加入A部分，从而使总评分最高，该最高分是多少。
 
