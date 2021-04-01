@@ -112,3 +112,9 @@ $$point_tot=point_A+point_B$$
 可以给出这$m$门选修课的所有排列组合，按元素个数分类。第一层循环为选出的元素个数$k$，第二层循环为包含该元素个数可能排列的个数$C_{m}^{k}$。第二层循环中即可计算选出的这$k$个放入A部分的总评分。这样也就包含了所有$2^{n}$中可能。
 
 [1.py](https://github.com/PatYoung/Python/blob/master/max/1.py)给出了一个生成某一列表所有元素所有排列，且不考虑顺序的程序，即共$2^{n}$中，且包含原列表元素个数为$k$个的种类有$C_{m}^{k}$个。
+
+### 程序
+
+[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)为穷举$2^{n}$中可能的程序。也可加入如“当选修课成绩小于当前评分”这样的判断来减小计算量。
+
+[max.py](https://github.com/PatYoung/Python/blob/master/max/max.py)与[maxgui_complete.py](https://github.com/PatYoung/Python/blob/master/max/maxgui_complete.py)算法均有问题。[max_example.py](https://github.com/PatYoung/Python/blob/master/max/max_example.py)中就包含了[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)没有问题而[maxgui_complete.py](https://github.com/PatYoung/Python/blob/master/max/maxgui_complete.py)计算有问题的可能取值，但仍可将其视为一个easyGUI的练习程序。
