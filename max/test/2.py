@@ -1,12 +1,8 @@
-import random
-
-a = int(random.randint(80, 90))
-b = int(random.randint(15, 20))
+a = 82
+b = 10
 k = 0.002
-print(a, b)
-n = int(random.randint(1, 15))
-x = [random.randint(a,a+10) for i in range(1, n)]
-y = [random.randint(1,4) for i in range(1, n)]
+x = [83, 91, 88, 88, 86, 88, 86, 90, 91]
+y = [2, 1, 3, 3, 1, 1, 2, 3, 1]
 print(x)
 print(y)
 
@@ -23,7 +19,6 @@ for i in range(0, len(x)):
     if c_0 > 0:
         x_g.append(x[i])
         y_g.append(y[i])
-    
 
 c_1 = 0.0
 c_2 = 0.0
@@ -40,6 +35,9 @@ for i in range(0, len(x_g)):
             c = y_g[j]
             y_g[j] = y_g[i]
             y_g[i] = c
+
+x_g = [91,91,90,88,88,88,86,86]
+y_g = [1,1,3,1,3,3,2,1]
 
 print(x_g)
 print(y_g)
@@ -60,16 +58,10 @@ for i in range(0, len(x_g)):
         cc_3 = cc_3 + x_g[jj]*y_g[jj]
     cc_4.append(cc_1/cc_2+k*cc_3)
 
+m = cc_4.index(max(cc_4))
+print("m:",m)
 
-
-
-if len(cc_4) != 0:
-    m = cc_4.index(max(cc_4))
-    print("m:",m)
-
-    for i in range(0,m+1):
-        print(x_g[i],y_g[i])
-
-
+for i in range(0,m+1):
+    print(x_g[i],y_g[i])
 
 
