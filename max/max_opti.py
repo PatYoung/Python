@@ -41,6 +41,10 @@ for i in range(0, len(x_g)):
             y_g[j] = y_g[i]
             y_g[i] = c
 
+for i in range(0, len(x_g)):
+    c_1 = (a*b+x_g[i]*y_g[i])/(b+y_g[i])-k*x_g[i]*y_g[i]
+    print(c_1)
+
 print(x_g)
 print(y_g)
 
