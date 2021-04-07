@@ -115,6 +115,21 @@ $$point_{tot}=point_A+point_B$$
 
 ### 程序
 
-[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)为穷举所有$2^{n}$可能的程序。也可加入如“当选修课成绩小于当前评分”这样的判断来减小计算量。
+~~[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)为穷举所有$2^{n}$可能的程序。也可加入如“当选修课成绩小于当前评分”这样的判断来减小计算量。~~ 程序有误，处理选修课数目大于十（双数）时，排列算法有问题，涉及到list的组合。有待改善。
 
 [max.py](https://github.com/PatYoung/Python/blob/master/max/max.py)与[maxgui_complete.py](https://github.com/PatYoung/Python/blob/master/max/maxgui_complete.py)算法均有问题。[max_example.py](https://github.com/PatYoung/Python/blob/master/max/max_example.py)中就包含了[max_beta.py](https://github.com/PatYoung/Python/blob/master/max/max_beta.py)没有问题而[maxgui_complete.py](https://github.com/PatYoung/Python/blob/master/max/maxgui_complete.py)计算有问题的可能取值，但仍可将其视为一个easyGUI的练习程序。
+
+### *算法更新*
+
+可有下式筛选有可能加入A部分的选修课$(x,y)$，即，
+
+$$\frac{ab+xy}{b+y} > a + kxy \Rightarrow \frac{a}{1-k(b+y)}$$
+
+其中$x$表示该门课成绩，$y$表示该门课绩点，$a$表示必修课加权平均成绩，$b$表示必修课的绩点和，$k=0.002$。即满足该式的选修课$(x,y)$在A部分较在B部分贡献大。将该集合记为$A^{+}$
+
+对所有满足上式的（当然可以同步进行）选修课$A^{+}=\{(X,Y)\}=\{(x_i,y_i),i=1,m\}$,$m$为$A^{+}$中元素个数，按下面值大小排序，即按“正”贡献排序，
+
+$$\frac{ab+xy}{b+y} - kxy$$
+
+考虑将集合$A^{+}$中$m$门选修课按“正”贡献大小依次加入A部分其余在B分计算，即第一次值考虑第一门，第二次考虑前两门，第三次考虑前三门……分别就算这$m$中$point_{tot,k}$。其中最大的一个值$point_{tot,max}$即为最高分。（有待与上面穷举相互验证）
+
