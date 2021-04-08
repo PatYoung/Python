@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 beta = 0.002
 
@@ -51,6 +52,19 @@ b_1 = [20]
 a_2 = [93, 92, 95, 94, 100, 96, 91, 100, 90, 93, 98, 100, 93]
 b_2 = [3, 3, 2, 3, 3, 1, 4, 2, 4, 3, 4, 1, 3]
 
+a_1 = int(random.randint(80, 90))
+b_1 = int(random.randint(15, 20))
+n = int(random.randint(1, 15))
+a_2 = [random.randint(a_1,a_1+10) for i in range(1, n)]
+b_2 = [random.randint(1,4) for i in range(1, n)]
+
+a_1 = [a_1]
+b_1 = [b_1]
+
+print(a_1, b_1)
+print(a_2)
+print(b_2)
+
 a_1 = np.array(a_1)
 b_1 = np.array(b_1)
 
@@ -72,7 +86,7 @@ result_class.append("")
 
 for i in range(1,len(a_2)):
     number_i = all_permutation(number,i)
-    print(len(number_i))
+    # print(len(number_i))
     for j in range(0,len(number_i)):
         number_i_j = number_i[j]
         a_c = [result_0]
@@ -112,26 +126,24 @@ for i in range(0, len(max_class)):
     print("第",int(max_class[i])+1,"门：","分数:",a_2[int(max_class[i])],"，绩点:",b_2[int(max_class[i])])
 
 ####################################################################################################
-### 一种近似算法
+### 一种近似算法，按“正”贡献排序
 ####################################################################################################
 a = result_0
 b = sum(b_1)
 x = list(a_2)
 y = list(b_2)
 
-for i in range(len(x)-1):
-    for j in range(len(x)-i-1):
-        c_1 = 0.0
-        c_1 = (a*b+x[j]*y[j])/(b+y[j])-beta*x[j]*y[j]
-        c_2 = 0.0
-        c_2 = (a*b+x[j+1]*y[j+1])/(b+y[j+1])-beta*x[j+1]*y[j+1]
+for i in range(0, len(x)):
+    for j in range(i, len(x)):
+        c_1 = (a*b+x[i]*y[i])/(b+y[i])-beta*x[i]*y[i]
+        c_2 = (a*b+x[j]*y[j])/(b+y[j])-beta*x[j]*y[j]
         if c_1 < c_2:
-            c = x[j+1]
-            x[j+1] = x[j]
-            x[j] = c
-            c = y[j+1]
-            y[j+1] = y[j]
-            y[j] = c
+            x_c = x[i]
+            x[i] = x[j]
+            x[j] = x_c
+            y_c = y[i]
+            y[i] = y[j]
+            y[j] = y_c
 
 print("b x",x)
 print("b y",y)
@@ -154,18 +166,55 @@ for i in range(0, len(x)):
     cc_4.append(cc_1/cc_2+beta*cc_3)
 
 print(cc_4)
+print("第", cc_4.index(max(cc_4))+1, "为")
+print("近似算得：", max(cc_4))
 
-x = [90, 100, 100, 100]
-y = [20, 3, 2, 1]
+####################################################################################################
+### 另一种近似算法，按成绩从大到小，相同成绩绩点从小到大排序
+####################################################################################################
 
-x_1 = [98, 96, 95, 94, 93, 93, 93, 92, 91, 90]
-y_1 = [4, 1, 2, 3, 3, 3, 3, 3, 4, 4]
+a = result_0
+b = sum(b_1)
+x = list(a_2)
+y = list(b_2)
 
-x = np.array(x)
-y = np.array(y)
-x_1 = np.array(x_1)
-y_1 = np.array(y_1)
+for i in range(0, len(x)):
+    for j in range(i, len(x)):
+        if x[i] < x[j]:
+            x_c = x[i]
+            x[i] = x[j]
+            x[j] = x_c
+            y_c = y[i]
+            y[i] = y[j]
+            y[j] = y_c  
 
-xxx = sum(x*y)/sum(y)+beta*sum(x_1*y_1)
+for i in range(0, len(x)):
+    for j in range(i, len(x)):
+        if x[i] == x[j]:
+            if y[i] > y[j]:
+                x_c = x[i]
+                x[i] = x[j]
+                x[j] = x_c
+                y_c = y[i]
+                y[i] = y[j]
+                y[j] = y_c  
 
-print(xxx)
+print("c x",x)
+print("c y",y)
+
+cc_4 = []
+
+for i in range(0, len(x)):
+    cc_1 = a*b
+    cc_2 = b
+    for j in range(0, i+1):
+        cc_1 = cc_1 + x[j]*y[j]
+        cc_2 = cc_2 + y[j]
+    cc_3 = 0.0
+    for jj in range(i+1, len(x)):
+        cc_3 = cc_3 + x[jj]*y[jj]
+    cc_4.append(cc_1/cc_2+beta*cc_3)
+
+print(cc_4)
+print("第", cc_4.index(max(cc_4))+1, "为")
+print("近似算得：", max(cc_4))
