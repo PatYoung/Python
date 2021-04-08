@@ -28,13 +28,16 @@ max_class = ''
 ##### 产生所有在列表a中选取i个元素排列的函数 #####
 def all_permutation(a,i):
     a_c = a[:1]
+    a_c = [a_c]
     a_all = []
     i = int(i)
     for j in range(1, len(a)):
         n = len(a_c)
-        a_c.append(a[j])
+        a_c.append([a[j]])
         for k in range(0, n):
-            a_c.append(list(a_c[k])+list(a[j]))
+            a_cc = a_c[k][:]
+            a_cc.append(a[j])
+            a_c.append(a_cc)
 
     for j in range(0, len(a_c)):
         if len(a_c[j]) == i:
@@ -45,8 +48,8 @@ def all_permutation(a,i):
 a_1 = [90]
 b_1 = [20]
 
-a_2 = [93, 92, 95, 94, 100, 96, 91, 100, 90]
-b_2 = [3, 3, 2, 3, 3, 1, 4, 2, 4]
+a_2 = [93, 92, 95, 94, 100, 96, 91, 100, 90, 93, 98, 100, 93]
+b_2 = [3, 3, 2, 3, 3, 1, 4, 2, 4, 3, 4, 1, 3]
 
 a_1 = np.array(a_1)
 b_1 = np.array(b_1)
@@ -152,26 +155,11 @@ for i in range(0, len(x)):
 
 print(cc_4)
 
-x = [90, 100, 98, 100, 100]
-y = [20, 3, 4, 2, 1]
+x = [90, 100, 100, 100]
+y = [20, 3, 2, 1]
 
-x_1 = [96, 95, 94, 93, 93, 93, 92, 91, 90]
-y_1 = [1, 2, 3, 3, 3, 3, 3, 4, 4]
-
-x = np.array(x)
-y = np.array(y)
-x_1 = np.array(x_1)
-y_1 = np.array(y_1)
-
-xxx = sum(x*y)/sum(y)+beta*sum(x_1*y_1)
-
-print(xxx)
-
-x = [90, 100, 100]
-y = [20, 3, 2]
-
-x_1 = [98, 100, 96, 95, 94, 93, 93, 93, 92, 91, 90]
-y_1 = [4, 1, 1, 2, 3, 3, 3, 3, 3, 4, 4]
+x_1 = [98, 96, 95, 94, 93, 93, 93, 92, 91, 90]
+y_1 = [4, 1, 2, 3, 3, 3, 3, 3, 4, 4]
 
 x = np.array(x)
 y = np.array(y)
