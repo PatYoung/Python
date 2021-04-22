@@ -133,3 +133,10 @@ $$\frac{ab+xy}{b+y} - kxy$$
 
 考虑将集合$A^{+}$中$m$门选修课按“正”贡献大小依次加入A部分其余在B分计算，即第一次值考虑第一门，第二次考虑前两门，第三次考虑前三门……分别就算这$m$中$point_{tot,k}$。其中最大的一个值$point_{tot,max}$即为最高分。~~（有待与上面穷举相互验证）~~$\Rightarrow$ 已验证，与穷举法比较，结果有出入，见[test.py](https://github.com/PatYoung/Python/blob/master/max/test/test.py)。试考虑其他按“贡献”排序方法。
 
+## [chaos](https://github.com/PatYoung/Python/tree/master/chaos)有如下描述:
+
+$$x_{n+1} = 1 - \mu x_{n}^2 \quad x\in [-1,1],\quad \mu \in (
+    0,2] $$
+
+其中$x_{0} = 0.618$，画图时舍去前两百个过渡点。
+
