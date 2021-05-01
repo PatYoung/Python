@@ -133,6 +133,14 @@ $$\frac{ab+xy}{b+y} - kxy$$
 
 考虑将集合$A^{+}$中$m$门选修课按“正”贡献大小依次加入A部分其余在B分计算，即第一次值考虑第一门，第二次考虑前两门，第三次考虑前三门……分别就算这$m$中$point_{tot,k}$。其中最大的一个值$point_{tot,max}$即为最高分。~~（有待与上面穷举相互验证）~~$\Rightarrow$ 已验证，与穷举法比较，结果有出入，见[test.py](https://github.com/PatYoung/Python/blob/master/max/test/test.py)。试考虑其他按“贡献”排序方法。
 
+### 一种*准确*算法
+
+按上面讨论，“正”贡献为，
+
+$$f(x,y)=\frac{ab+xy}{b+y} - kxy$$
+
+考虑$x$相同时$x(y_i+y_j)=xy_{tot}$，即相同成绩可以一同（求和）讨论。对上式分别对$x,y$求偏导，可知在$y$相对小的范围内，$f(x,y)$随$x$单增。而$x$一定，$f(x,y)$对某一$y(y_{tot})$有最大值。现在只从成绩从高到低考虑，并将相同成绩的一同考虑，考虑相同成绩的各$y_{i}$的组合和$y_{tot}$，使其使相应$f(x,y)$最大，且若当前成绩有不在A部分计算的，不用考虑更低分的成绩。由此，即得目前最优解。程序见[beta.py](https://github.com/PatYoung/Python/blob/master/max/beta.py)
+
 ## [chaos](https://github.com/PatYoung/Python/tree/master/chaos)有如下描述:
 
 $$x_{n+1} = 1 - \mu x_{n}^2 \quad x\in [-1,1],\quad \mu \in (
