@@ -148,3 +148,20 @@ $$x_{n+1} = 1 - \mu x_{n}^2 \quad x\in [-1,1],\quad \mu \in (
 
 其中$x_{0} = 0.618$，画图时舍去前两百个过渡点。
 
+## [24](https://github.com/PatYoung/Python/tree/master/24)有如下描述:
+
+穷举四个数利用四则运算包含括号计算24的所有可能。即，
+
+$$a \quad \Box \quad b \quad \Box \quad c \quad \Box \quad d \quad = \quad 24$$
+
+其中区分两种不同放置括号方式，即，
+
+$$(a \quad \Box \quad b) \quad \Box \quad (c \quad \Box \quad d) \quad = \quad 24$$
+
+与其他。
+
+并考虑$a$、$b$两数不区分顺序的四则运算结果有6种。穷举计算不同加括号方式的所有不区分顺序的可能。
+
+程序见[24.py](https://github.com/PatYoung/Python/blob/master/24/24.py)
+
+有待改进循环。
