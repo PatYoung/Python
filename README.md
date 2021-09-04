@@ -176,4 +176,4 @@ $$(22)_10 = (00010110)_2$$
 
 变化见下图，
 
-![fig](https://github.com/PatYoung/Python/tree/master/CA/png/CA.png)
+![fig](https://github.com/PatYoung/Python/blob/master/CA/png/ca.png)
