@@ -174,6 +174,6 @@ $$(22)_10 = (00010110)_2$$
 
 此处，二进制数补全8位。规则为，如$(7)_10=(111)_2$，中间数两侧均为$1$时，中间的数变为$0$，对应$(00010110)_2$的第一个数。其他同理。
 
-变化见下图，
+见下图，
 
-![fig](https://github.com/PatYoung/Python/blob/master/CA/png/ca.png)
+![fig](https://github.com/PatYoung/Python/blob/master/CA/png/1_ca.png)
