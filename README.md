@@ -149,6 +149,7 @@ $$x_{n+1} = 1 - \mu x_{n}^2 \quad x\in [-1,1],\quad \mu \in (
 其中$x_{0} = 0.618$，画图时舍去前两百个过渡点。
 
 见下图，
+
 ![fig](https://github.com/PatYoung/Python/blob/master/chaos/1.png)
 
 ## [24](https://github.com/PatYoung/Python/tree/master/24)有如下描述:
