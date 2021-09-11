@@ -179,3 +179,61 @@ $$(22)_10 = (00010110)_2$$
 见下图，
 
 ![fig](https://github.com/PatYoung/Python/blob/master/CA/png/1_ca.png)
+
+## [ellipse](https://github.com/PatYoung/Python/tree/master/ellipse)有如下描述:
+
+取一圆，半径为c，圆心O(0,0)，及任一点A(a,0)。作A点与圆上任意的B(x,y)($x^2+y^2=c^2)$连线的中垂线。所有圆上点B(x,y)这样的与A(a,0)连线的中垂线围成一椭圆。
+
+见下图，
+
+![fig](https://github.com/PatYoung/Python/blob/master/ellipse/ellipse.png)
+
+## [poker_bomb](https://github.com/PatYoung/Python/tree/master/poker_comb)有如下描述:
+
+计算斗地主中54（13*4+2）张牌，农民（17张牌）与地主（20张牌）拿到炸弹的概率。分为如下几种情况：
+
+### 农民（17张牌）或 地主（20张牌）
+
+1. 至少拿到一个普通炸弹概率（包含能拿到王炸可能）
+
+2. 拿到一个王炸概率（包含能拿到普通炸弹可能可能）
+
+3. 同时拿到普通炸弹与王炸
+
+4. 至少拿到一个普通炸弹概率（不包含能拿到王炸可能）
+
+5. 拿到一个王炸概率（不包含能拿到普通炸弹可能可能）
+
+### 至少有一人拿到一个炸弹（不区分）
+
+利用蒙特-卡洛计算，考虑解析计算。
+
+## [interpolation](https://github.com/PatYoung/Python/tree/master/interpolation)有如下描述:
+
+拉格朗日插值法实例应用。插值法要求插值过得到的函数要经过原来的点$(x_i,y_i)$。为$n$次多项式形式插值，对已知的$n$点$(x_i,y_i),\quad i = 1,...,n$
+
+$$P_i = \frac{(x-x_1)...(x-x_{i-1})(x-x_{i+1})...(x-x_n)}{(x_i-x_1)...(x_i-x_{i-1})(x_i-x_{i+1})...(x_i-x_n)}$$
+
+$$y = \sum_{i}^{n}P_i y_i$$
+
+可见$x\neq x_i \rightarrow P_i = 0$，插值后得到的函数$y$满足上面过点$(x_i,y_i)$的要求。
+
+该方法可与如泰勒展开类类比，均展开成多项式形式。从$P_i$的$(n-1)$次多项式的形式可以看出，$n$越大，因为能加以利用的多项式展开项更多，$y$可能越准。
+
+但对于一些不能用多项式展开的函数，该方法可能会出现问题，如剧烈震荡等。
+
+如下两图，
+
+$$y=sin(x^2)$$
+
+![fig](https://github.com/PatYoung/Python/blob/master/interpolation/1.png)
+
+$$y=ln(x^2)$$
+
+![fig](https://github.com/PatYoung/Python/blob/master/interpolation/1.png)
+
+
+
+
+
+
