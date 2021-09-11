@@ -232,7 +232,7 @@ $$y=ln(x^2)$$
 
 ![fig](https://github.com/PatYoung/Python/blob/master/interpolation/2.png)
 
-## [interpolation](https://github.com/PatYoung/Python/tree/master/pow)有如下描述:
+## [pow](https://github.com/PatYoung/Python/tree/master/pow)有如下描述:
 
 计算数$a$的更号，或开三次方，拿根号举例，
 
