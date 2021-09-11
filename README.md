@@ -230,8 +230,19 @@ $$y=sin(x^2)$$
 
 $$y=ln(x^2)$$
 
-![fig](https://github.com/PatYoung/Python/blob/master/interpolation/1.png)
+![fig](https://github.com/PatYoung/Python/blob/master/interpolation/2.png)
 
+## [interpolation](https://github.com/PatYoung/Python/tree/master/pow)有如下描述:
+
+计算数$a$的更号，或开三次方，拿根号举例，
+
+1. 取$a_0 = a/2$（可为任意数，区分以1为界的情况）
+
+2. 若$a_0 \gt \sqrt{a}$ 则 取$a_1 = a/a_0 \lt \sqrt{a}$，反之亦然，即这样两个数总在$\sqrt{a}$两侧
+
+3. $a_0 = (a_0 + a/a_0) / 2$， 重复以上步骤至收敛
+
+对$a^{1/3}$可试改为$a_0 = (a_0 + a/{a_0}^2) / 2$
 
 
 
